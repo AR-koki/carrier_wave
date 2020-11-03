@@ -1,0 +1,11 @@
+<%= form_for(@user) do |f| %>
+	<% if @user.avater? %>
+		<%= image_tag @user.avater.url %>
+	<% else %>
+		<%= image_tag "/assets/default.jpg", :size => '100x100' %>
+	<% end %>
+		<button type="button" class="btn btn-outline-secondary rounded-pill">
+        	<%= f.file_field :avater, accept: 'image/jpeg,image/gif,image/png' %>
+      	</button>
+　　<%= f.submit '更新する', class: 'btn btn-primary' %>
+<% end %>
