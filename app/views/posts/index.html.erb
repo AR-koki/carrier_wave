@@ -1,5 +1,7 @@
 <% @posts.each do |post| %>
 	<%= post.title %>
 	<%= post.body %>
-	<%= image_tag post.image.thumb.url %>
+	<% post.images.each do |image| %>
+		<%= image_tag(image.thumb.url) %>
+	<% end %>
 <% end %>

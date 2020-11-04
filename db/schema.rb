@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2020_11_03_143007) do
     t.string "title"
     t.text "body"
     t.integer "user_id"
-    t.string "image"
+    t.json "images"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
