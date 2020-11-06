@@ -8,10 +8,10 @@
 	</tr>
 	<% @posts.each do |post| %>
 	<tr>
-		<td></td>
+		<td><%= post.user.name %></td>
 		<td><%= post.title %></td>
 		<td><%= post.body %></td>
-		<td></td>
+		<td><%= post.category.category %></td>
 		<td>
 			<% post.images.each do |image| %>
 				<%= image_tag(image.thumb.url) %>

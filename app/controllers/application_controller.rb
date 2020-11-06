@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
 		user_path(resource.id)
 	end
 	def after_sign_out_path_for(resource)
-		root_path
+		new_user_session_path
 	end
 	protected
 	def configure_permitted_parameters
