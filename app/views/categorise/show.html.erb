@@ -1,0 +1,22 @@
+<table>
+	<tr border="1" width="900">
+		<th width="20%">ユーザー名</th>
+		<th width="20%">タイトル</th>
+		<th width="20%">内容</th>
+		<th width="20%">カテゴリー</th>
+		<th width="20%">写真</th>
+	</tr>
+	<% @categorise.each do |category| %>
+	<tr>
+		<td><%= category.user.name %></td>
+		<td><%= category.title %></td>
+		<td><%= category.body %></td>
+		<td><%= category.category.category %></td>
+		<td>
+			<% category.images.each do |image| %>
+				<%= image_tag(image.thumb.url) %>
+			<% end %>
+		<td>
+	</tr>
+	<% end %>
+</table>
