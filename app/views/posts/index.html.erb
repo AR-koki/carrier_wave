@@ -1,7 +1,22 @@
-<% @posts.each do |post| %>
-	<%= post.title %>
-	<%= post.body %>
-	<% post.images.each do |image| %>
-		<%= image_tag(image.thumb.url) %>
+<table>
+	<tr border="1" width="900">
+		<th width="20%">ユーザー名</th>
+		<th width="20%">タイトル</th>
+		<th width="20%">内容</th>
+		<th width="20%">カテゴリー</th>
+		<th width="20%">写真</th>
+	</tr>
+	<% @posts.each do |post| %>
+	<tr>
+		<td></td>
+		<td><%= post.title %></td>
+		<td><%= post.body %></td>
+		<td></td>
+		<td>
+			<% post.images.each do |image| %>
+				<%= image_tag(image.thumb.url) %>
+			<% end %>
+		<td>
+	</tr>
 	<% end %>
-<% end %>
+</table>
