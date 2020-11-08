@@ -1,5 +1,6 @@
 <% @categorise.each do |category| %>
 	<%= link_to categorise_path(category) do %>
 		<%= category.category %>
+		<%= category.posts.count %><br>
 	<% end %>
 <% end %>
