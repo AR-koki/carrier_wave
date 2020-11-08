@@ -5,7 +5,6 @@ class CategoriseController < ApplicationController
 
   def show
   	@categorise = Post.where(category_id: params[:id])
-
   end
 
   private

@@ -9,7 +9,11 @@
 	<% @posts.each do |post| %>
 	<tr>
 		<td><%= post.user.name %></td>
-		<td><%= post.title %></td>
+		<td>
+			<%= link_to post_path(post) do %>
+				<%= post.title %>
+			<% end %>
+		</td>
 		<td><%= post.body %></td>
 		<td><%= post.category.category %></td>
 		<td>

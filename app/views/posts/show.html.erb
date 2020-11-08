@@ -1,0 +1,6 @@
+<%= @post.user.name %>
+<%= @post.title %>
+<%= @post.body %>
+<% @post.images.each do |image| %>
+	<%= image_tag(image.thumb.url) %>
+<% end %>

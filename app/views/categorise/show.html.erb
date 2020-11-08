@@ -9,7 +9,11 @@
 	<% @categorise.each do |category| %>
 	<tr>
 		<td><%= category.user.name %></td>
-		<td><%= category.title %></td>
+		<td>
+			<%= link_to post_path(category) do %>
+				<%= category.title %>
+			<% end %>
+		</td>
 		<td><%= category.body %></td>
 		<td><%= category.category.category %></td>
 		<td>
