@@ -25,7 +25,6 @@ ActiveRecord::Schema.define(version: 2020_11_09_114433) do
     t.json "images"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "category"
     t.integer "category_id"
   end
 

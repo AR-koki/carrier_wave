@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :posts, only: [:create, :index, :show, :edit, :update, :destroy, :new]
   resources :users, only: [:index,:show, :edit, :update, :index, :create]
   resources :categorise, only: [:index, :show]
+  resources :relationships, only: [:create, :destroy]
 end

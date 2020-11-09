@@ -4,9 +4,23 @@
 		<td>follow</td>
 	</tr>
 	<% @users.each do |user| %>
-	<tr>
-		<td><%= user.name %></td>
-		<td></td>
-	</tr>
-<% end %>
+		<tr>
+			<td><%= user.name %></td>
+			<td>
+				<% unless current_user == user %>
+					<% if current_user.following?(user) %>
+			            <%= form_for(current_user.relationships.find_by(follow_id: user.id), html: { method: :delete }) do |f| %>
+			              <%= hidden_field_tag :follow_id, user.id %>
+			              <%= f.submit 'Unfollow' %>
+			            <% end %>
+			        <% else %>
+			            <%= form_for(current_user.relationships.build) do |f| %>
+			              <%= hidden_field_tag :follow_id, user.id %>
+			              <%= f.submit 'follow' %>
+			            <% end %>
+			        <% end %>
+		        <% end %>
+			</td>
+		</tr>
+	<% end %>
 </table>
