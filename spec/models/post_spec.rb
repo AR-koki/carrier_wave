@@ -16,7 +16,7 @@ RSpec.describe Post, type: :model do
 	    before do
 	      @post = Post.new
 	      @post.title = ""
-	      @post.content = "今日も晴れです。"
+	      @post.body = "今日も晴れです。"
 	      @post.save
 	    end
 	    it "titleが入力されていないので保存されない" do
