@@ -9,4 +9,12 @@ RSpec.describe User, type: :model do
 		)
 		expect(user).to be_valid
 	end
+
+	describe 'アソシエーション' do
+		context 'Postモデルとの関係' do
+			it '1:Nとなっている' do
+				expect(User.reflect_on_association(:posts).macro).to eq :has_many
+			end
+		end
+	end
 end

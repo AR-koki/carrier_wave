@@ -24,4 +24,14 @@ RSpec.describe Post, type: :model do
 	      expect(@post.errors[:title]).to include("can't be blank")
 	    end
 	end
+	describe "アソシエーション" do
+		context "Userモデルとの関係" do
+			it "1:Nとなっている" do
+				expect(Post.reflect_on_association(:user).macro).to eq :belongs_to
+			end
+			it "1:Nとなっている" do
+				expect(Post.reflect_on_association(:category).macro).to eq :belongs_to
+			end
+		end
+	end
 end
