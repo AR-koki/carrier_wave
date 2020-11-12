@@ -28,8 +28,6 @@ RSpec.describe Post, type: :model do
 		context "Userモデルとの関係" do
 			it "1:Nとなっている" do
 				expect(Post.reflect_on_association(:user).macro).to eq :belongs_to
-			end
-			it "1:Nとなっている" do
 				expect(Post.reflect_on_association(:category).macro).to eq :belongs_to
 			end
 		end
